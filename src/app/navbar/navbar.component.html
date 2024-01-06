@@ -1,0 +1,68 @@
+<!-- <p>
+    <mat-toolbar color="primary">
+    <img src="/assets/revspeed.png" alt="loading">
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">Home</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">DTH</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">BroadBand</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">Contact</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">Notification</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank">Billing</a>
+    <span class="example-spacer"></span>
+    <a mat-button href="https://www.google.com/" target="_blank"><i class="fa-solid fa-user"></i></a>
+    <span class="example-spacer"></span>
+    </mat-toolbar>
+  </p> -->
+
+
+<!-- navbar.component.html -->
+<mat-toolbar color="primary">
+
+  <!-- Logo -->
+  <img src="assets/revspeed.png" alt="loading">
+  
+  <span class="example-spacer"></span>
+
+  <!-- Navigation links for medium to extra-large screens -->
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">Home</a>
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">DTH</a>
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">BroadBand</a>
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">Contact</a>
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">Notification</a>
+  <a mat-button href="https://www.google.com/" target="_blank" *ngIf="!isSmallScreen">Billing</a>
+
+  <!-- Profile icon with its own dropdown menu always displayed on the right -->
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item >Login</button>
+    <button mat-menu-item >Register</button>
+    <button mat-menu-item >Logout</button>
+    <!-- <button mat-menu-item (click)="register()">Register</button>
+    <button mat-menu-item (click)="logout()">Logout</button> -->
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="profileMenu">
+    <i class="fa-solid fa-user"></i>
+  </button>
+
+  <!-- Navigation links inside a button menu for small and extra-small screens -->
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="isSmallScreen">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" (closed)="isMenuOpen = false">
+    <a mat-menu-item href="https://www.google.com/" target="_blank">Home</a>
+    <a mat-menu-item href="https://www.google.com/" target="_blank">DTH</a>
+    <a mat-menu-item href="https://www.google.com/" target="_blank">BroadBand</a>
+    <a mat-menu-item href="https://www.google.com/" target="_blank">Contact</a>
+    <a mat-menu-item href="https://www.google.com/" target="_blank">Notification</a>
+    <a mat-menu-item href="https://www.google.com/" target="_blank">Billing</a>
+  </mat-menu>
+
+</mat-toolbar>
+
+
+
+

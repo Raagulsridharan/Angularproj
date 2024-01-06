@@ -1,0 +1,33 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }  
+
+  /* navbar.component.css */
+/* navbar.component.css */
+
+/* Default styles for the image */
+img {
+  height: 40px; /* Default height */
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  img {
+    height: 30px; /* Adjust the height for smaller screens */
+  }
+}
+
+/* Media query for screens with a minimum width of 769px and a maximum of 1200px */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  img {
+    height: 50px; /* Adjust the height for medium-sized screens */
+  }
+}
+
+/* Media query for screens with a minimum width of 1201px */
+@media screen and (min-width: 1201px) {
+  img {
+    height: 60px; /* Adjust the height for larger screens */
+  }
+}
+
